@@ -14,16 +14,16 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class EchoController {
 
-    private final String appConfig;
+    private final AppConfig appConfig;
 
     @Inject
-    public EchoController(String template) {
-        this.appConfig = template;
+    public EchoController(AppConfig appConfig) {
+        this.appConfig = appConfig;
     }
 
     @GET
     @Timed
     public CommonResponse<String> echo() {
-        return CommonResponse.<String>builder().data(appConfig).build();
+        return CommonResponse.<String>builder().data(appConfig.getTemplate()).build();
     }
 }
