@@ -1,10 +1,8 @@
 package org.learning.storm.config;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Provider;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import org.learning.storm.controller.EchoController;
 
 @Singleton
 public class AppModule extends AbstractModule {
@@ -17,12 +15,11 @@ public class AppModule extends AbstractModule {
 
     @Override
     protected void configure() {
-//        bind(EchoController.class).asEagerSingleton();
     }
 
     @Provides
-    @javax.inject.Singleton
-    public AppConfig getTemplate() {
+    @Singleton
+    public AppConfig getAppConfig() {
         return this.appConfig;
     }
 
