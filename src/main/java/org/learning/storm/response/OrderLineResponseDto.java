@@ -16,8 +16,14 @@ import lombok.experimental.FieldDefaults;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CommonResponse<T> {
-    String errorMessage;
-    T data;
-    String code;
+public class OrderLineResponseDto {
+    String productName;
+
+    int quantity;
+
+    double price;
+
+    String sku;
+
+    String status;
 }
