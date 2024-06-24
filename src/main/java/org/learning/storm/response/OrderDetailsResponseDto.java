@@ -8,6 +8,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.learning.storm.request.OrderLineRequestDTO;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,8 +19,12 @@ import lombok.experimental.FieldDefaults;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CommonResponse<T> {
-    String errorMessage;
-    T data;
-    String code;
+public class OrderDetailsResponseDto {
+    String customerName;
+
+    String customerEmail;
+
+    List<OrderLineRequestDTO> items;
+
+    String status;
 }

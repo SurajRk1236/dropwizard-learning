@@ -2,6 +2,7 @@ package org.learning.storm.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,11 @@ public class AppConfig extends Configuration {
     @NotNull
     @JsonProperty
     String template;
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    DataSourceFactory dataSource;
 
 
 }
